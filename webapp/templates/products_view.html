@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue;">Products</a>
+    <span style="margin-top: 8px">|</span>
+    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue">Add product</a>
+    <span style="margin-top: 8px">|</span>
+    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue">Add category</a>
+{% endblock %}
+
+    <title>{% block title %}Details{% endblock %}</title>
+
+{% block content %}
+    <center>
+  <div class="card border-success mb-3" style="max-width: 540px; margin-top: 50px; text-align: left">
+  <div class="row g-0">
+    <div class="col-md-4">
+      <img src="{{ products.imagine }}" class="img-fluid rounded-start" alt="..." style="max-width: 180px">
+    </div>
+    <div class="col-md-8">
+      <div class="card-body">
+        <h2 class="card-title">{{ products.name }}</h2>
+        <h5 class="card-text">{{ products.category.name }}</h5>
+        <h5 class="card-text" class="text-body-secondary">Price: {{ products.price }} com</h5>
+        <h5 class="card-title">{{ products.description }}</h5>
+        <h6 class="card-title">added: {{ products.date }}</h6>
+      </div>
+    </div>
+  </div>
+</div>
+    </center>
+{% endblock %}
