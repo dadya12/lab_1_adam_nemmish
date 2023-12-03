@@ -1,11 +1,11 @@
 {% extends 'base.html' %}
 
 {% block navbar %}
-    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue;">Products</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'product' %}" style="color: blue">Products</a>
     <span style="margin-top: 8px">|</span>
     <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue">Add product</a>
     <span style="margin-top: 8px">|</span>
-    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue">Add category</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'create_category' %}" style="color: blue">Add category</a>
 {% endblock %}
 
     <title>{% block title %}Details{% endblock %}</title>
