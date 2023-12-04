@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block navbar %}
+    <a class="nav-link active" aria-current="page" href="{% url 'product' %}" style="color: blue;">Products</a>
+    <span style="margin-top: 8px">|</span>
+    <a class="nav-link active" aria-current="page" href="{% url 'create_product' %}" style="color: blue">Add product</a>
+    <span style="margin-top: 8px">|</span>
+    <a class="nav-link active" aria-current="page" href="{% url 'create_category' %}" style="color: blue">Add category</a>
+{% endblock %}
+
+    <title>{% block title %}Add Product{% endblock %}</title>
+
+{% block content %}
+
+<h1 style="margin-top: 50px; margin-bottom: 50px">Add Product</h1>
+    <form method="post" action="{% url 'create_product' %}">
+    {% csrf_token %}
+        <input type="text" name="name" placeholder="Title">
+    <br>
+    <br>
+        <input type="number" name="price" placeholder="Price">
+    <br>
+    <br>
+        <input type="text" name="imagine" placeholder="Image url">
+    <br>
+    <br>
+        <select name="category_id" id="" style="padding-right: 135px; text-align: center">
+            {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+    <br>
+    <br>
+        <textarea name="description" placeholder="Description" style="padding-right: 16px"></textarea>
+    <br>
+    <br>
+        <button type="submit" class="btn btn-primary">Add Product</button>
+</form>
+
+{% endblock %}

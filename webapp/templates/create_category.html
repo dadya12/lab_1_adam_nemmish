@@ -3,7 +3,7 @@
 {% block navbar %}
     <a class="nav-link active" aria-current="page" href="{% url 'product' %}" style="color: blue;">Products</a>
     <span style="margin-top: 8px">|</span>
-    <a class="nav-link active" aria-current="page" href="{% url 'home' %}" style="color: blue">Add product</a>
+    <a class="nav-link active" aria-current="page" href="{% url 'create_product' %}" style="color: blue">Add product</a>
     <span style="margin-top: 8px">|</span>
     <a class="nav-link active" aria-current="page" href="{% url 'create_category' %}" style="color: blue">Add category</a>
 {% endblock %}
@@ -15,13 +15,13 @@
 <h1 style="margin-top: 50px; margin-bottom: 50px">Add Category</h1>
     <form method="post" action="{% url 'create_category' %}">
     {% csrf_token %}
-    <input type="text" name="name" placeholder="Наименование">
+    <input type="text" name="name" placeholder="Title">
     <br>
     <br>
-    <textarea name="description" placeholder="Описание"></textarea>
+    <textarea name="description" placeholder="Description"></textarea>
     <br>
     <br>
-    <button type="submit">Добавить</button>
+    <button type="submit" class="btn btn-primary">Add Category</button>
 </form>
 
 {% endblock %}
