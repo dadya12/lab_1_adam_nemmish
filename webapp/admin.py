@@ -11,8 +11,8 @@ class TaskAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class TaskAdmin(admin.ModelAdmin):
-    list_display = ['id', 'name', 'description', 'category', 'date', 'price', 'imagine']
+    list_display = ['id', 'name', 'description', 'category', 'date', 'price', 'remainder', 'imagine']
     list_filter = ['id', 'name']
     search_fields = ['id', 'name']
-    fields = ['name', 'description', 'category', 'date', 'price', 'imagine']
+    fields = ['name', 'description', 'category', 'date', 'price', 'remainder', 'imagine']
     readonly_fields = ['date']
