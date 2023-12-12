@@ -23,6 +23,7 @@
         <h6 class="card-text">{{ product.category.name }}</h6>
         <h6 class="card-text"><small class="text-body-secondary">Price: {{ product.price }} com</small></h6>
         <a href="/products/{{ product.pk }}/">see more>>></a>
+        <a class="nav-link active" aria-current="page" href="{% url 'update_product' pk=product.pk %}" style="color: black">Redact</a>
       </div>
     </div>
   </div>

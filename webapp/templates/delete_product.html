@@ -8,11 +8,14 @@
     <a class="nav-link active" aria-current="page" href="{% url 'create_category' %}" style="color: blue">Add category</a>
 {% endblock %}
 
-    <title>{% block title %}Add Product{% endblock %}</title>
+
+    <title>{% block title %}Delete Product{% endblock %}</title>
 
 {% block content %}
-<h1 style="margin-top: 50px">Добавить новый продукт</h1>
-<form method="post" action="{% url 'create_product' %}">
-    {% include 'partial/create_update_form.html' with value_submit='Добавить' %}
+<h1 style="margin-top: 50px">Вы точно хотите удалить этот продукт!? </h1>
+<form method="post">
+    {% csrf_token %}
+<button type="submit" class="btn btn-success">ДА</button>
+<a class="btn btn-danger" href="{% url 'home' %}" role="button">НЕТ</a>
 </form>
 {% endblock %}

@@ -6,6 +6,10 @@
     <a class="nav-link active" aria-current="page" href="{% url 'create_product' %}" style="color: blue">Add product</a>
     <span style="margin-top: 8px">|</span>
     <a class="nav-link active" aria-current="page" href="{% url 'create_category' %}" style="color: blue">Add category</a>
+    <span style="margin-top: 8px">|</span>
+    <a class="nav-link active" aria-current="page" href="{% url 'update_product' pk=products.pk %}" style="color: blue">Redact</a>
+    <span style="margin-top: 8px">|</span>
+    <a class="nav-link active" aria-current="page" href="{% url 'delete_product' pk=products.pk %}" style="color: blue">Delete</a>
 {% endblock %}
 
     <title>{% block title %}Details{% endblock %}</title>

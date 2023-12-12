@@ -11,8 +11,9 @@
     <title>{% block title %}Add Product{% endblock %}</title>
 
 {% block content %}
-<h1 style="margin-top: 50px">Добавить новый продукт</h1>
+
+<h1 style="margin-top: 50px">Редактировать запись</h1>
 <form method="post" action="{% url 'create_product' %}">
-    {% include 'partial/create_update_form.html' with value_submit='Добавить' %}
+    {% include 'partial/create_update_form.html' with value_submit='Заменить' %}
 </form>
 {% endblock %}
